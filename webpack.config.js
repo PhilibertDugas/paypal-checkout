@@ -211,11 +211,17 @@ export let CHILD_LOADER_MIN = getWebpackConfig({
     minify:   true
 });
 
+export let UTIL = getWebpackConfig({
+    src:      './src/loadUtil.js',
+    filename: `util.min.js`,
+    minify:   true
+});
+
 export let BUTTON = getWebpackConfig({
     src:       './src/load.js',
     filename:  `${ FILE_NAME }.button.v${ nextMajorVersion }.js`,
     chunkname: `${ FILE_NAME }.button.v${ nextMajorVersion }.chunk.js`,
-    
+
     major:    true,
     vars:     {
         __LEGACY_SUPPORT__:   false
@@ -228,6 +234,7 @@ export default [
     MAJOR, MINOR,
     MAJOR_MIN, MINOR_MIN,
     LIB,
+    UTIL,
     BUTTON_RENDER,
     CHILD_LOADER, CHILD_LOADER_MIN
 ];
